@@ -3,6 +3,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+/.idea/
+/target/
+/.iml/
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
@@ -37,6 +40,4 @@ build/
 ### Mac OS ###
 .DS_Store
 
-/.idea/
-/target/
-/.iml/
+
