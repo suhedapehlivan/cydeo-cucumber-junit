@@ -1,5 +1,6 @@
 package com.cydeo.step_definitions;
 
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import com.github.javafaker.Faker;
 import io.cucumber.java.en.Given;
@@ -47,10 +48,11 @@ public class toDoTask {
         actions.doubleClick(secondItem).perform();
 
         WebElement edit = Driver.getDriver().findElement(By.xpath("//input[@id='edit']"));
-        edit.sendKeys(Keys.chord(Keys.CONTROL, "a")+ Keys.BACK_SPACE);
+        edit.sendKeys(Keys.chord(Keys.COMMAND, "a")+ Keys.BACK_SPACE);
         //chord   bu method sayesinde 2 action aynı anda kullanılabiliyor
 
-        secondItem.sendKeys("earth"+ Keys.ENTER);
+
+        edit.sendKeys("earth"+ Keys.ENTER);
     }
     @Then("user should see the edited second item on Todo list")
     public void user_should_see_the_edited_second_item_on_todo_list() {
