@@ -1,13 +1,15 @@
-@todotask
-Feature: Write a basic browser automation framework to validate a Polymer website. The focus should
-be on The Web Application under test http://todomvc.com/
+@Todo
+Feature: Adding Todo List
+  User story:
+  As a user, I should able to add 2 todo item and re-edit these items
 
-Scenario: user should click JavaScript and select Polymer. Then user should add two items on todo list.
-  user should edit the second item on todo list.
+  Background: For the scenarios in the feature file, user is expected to be on website page
+    Given user is on the Todo home page
 
-  Given user load the website
-  When click within the JavaScript tab
-  And select Polymer link
-  And add two Todo items
-  And edit the content of the second Todo item
-  Then user should see the edited second item on Todo list
+  @Action
+  Scenario: Adding two todo items and editing one of them
+
+    When user click Javascript tab
+    And user select Polymer link
+    And user add first todo item and second item
+    Then user should re-edit second item
