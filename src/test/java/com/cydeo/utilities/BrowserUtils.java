@@ -4,8 +4,11 @@ import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 public class BrowserUtils {
@@ -76,5 +79,28 @@ public class BrowserUtils {
     }
 
 
+    /**
+     * This method will accept a dropdown as a WebElement
+     * and return all the options' text in a List of String
+     * @param dropdownElement
+     * @return
+     */
+    public static List<String> dropdownOptionsAsString(WebElement dropdownElement){
+        Select select=new Select(dropdownElement);
+
+        //List of all ACTUAL month <options> as a web element
+        List<WebElement> actualOptionAsWebElement = select.getOptions();
+
+        //create a list of string and pass all the actual web element options' string into that new list
+
+        //**** we get the web element, and getting the text of it, and put in text as a string into the specific list.
+        //List of all ACTUAL month <options> as a string
+        List<String> actualOptionsAsString = new ArrayList<>();
+
+        for (WebElement each :actualOptionAsWebElement) {
+            actualOptionsAsString.add(each.getText());
+        }
+        return  actualOptionsAsString;
+    }
 
 }
