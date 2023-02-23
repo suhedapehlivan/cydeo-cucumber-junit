@@ -16,7 +16,7 @@ Feature: Examples of Cucumber data tables implementations
   #windows: control + alt + L
 
 
-  @wip
+
   Scenario: User should be able to see all 12 months in months
   dropdown
 
