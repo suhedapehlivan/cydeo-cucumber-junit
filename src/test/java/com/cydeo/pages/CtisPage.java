@@ -18,4 +18,9 @@ public class CtisPage {
     @FindBy(xpath = "//input[@class='login-btn']")
     public WebElement LoginButton;
 
+    public void login(String userName, String userPass){
+        usernameBox.sendKeys(userName);
+        passwordBox.sendKeys(userPass);
+        LoginButton.click();
+    }
 }

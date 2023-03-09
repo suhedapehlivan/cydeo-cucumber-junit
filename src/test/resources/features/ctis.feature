@@ -26,7 +26,7 @@ Feature: Login functionality
     Then user should see title is Portal
 
 
-  @ctis
+
   Scenario Outline: Login with valid username and valid password
     When user types username "<username>" as user
     And user types password "<password>" as user
@@ -40,5 +40,9 @@ Feature: Login functionality
       | hr65@cybertekschool.com        | UserUser |
 
 
+  @ctis
+  Scenario: login with excel data
+    And user get data from excel and verify login
+    Then user close the driver
 
 
